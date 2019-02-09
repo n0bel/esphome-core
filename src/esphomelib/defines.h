@@ -57,6 +57,7 @@
   #define USE_DEBUG_COMPONENT
   #define USE_DEEP_SLEEP
   #define USE_PCF8574
+  #define USE_MCP23017
   #define USE_IO
   #define USE_MPU6050
   #define USE_TSL2561
@@ -184,6 +185,14 @@
   #endif
 #endif
 #ifdef USE_PCF8574
+  #ifndef USE_IO
+    #define USE_IO
+  #endif
+#endif
+#ifdef USE_MCP23017
+  #ifndef USE_I2C
+    #define USE_I2C
+  #endif
   #ifndef USE_IO
     #define USE_IO
   #endif
